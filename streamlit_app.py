@@ -1,11 +1,7 @@
 import streamlit as st
-import pdf2image
-from PIL import Image
-import pytesseract
-from pytesseract import Output, TesseractError
-from functions import convert_pdf_to_txt_pages, convert_pdf_to_txt_file, save_pages, displayPDF, images_to_txt
+from functions import displayPDF, images_to_txt
 
-st.title("🎈 My new app")
+st.title("🔥 My new app")
 
 languages = {
     'English': 'eng',
@@ -13,11 +9,15 @@ languages = {
 }
 
 with st.sidebar:
-    st.title(":outbox_tray: LOREM IPSUM")
+    st.markdown("""
+    # 🔥 LOREM IPSUM
+    
+    """)
 
     st.markdown("""
     # How does it work?
     LOREM IPSUM
+
     """)
     
     st.markdown("""
@@ -34,7 +34,7 @@ if pdf_file:
     path = pdf_file.read()
     file_extension = pdf_file.name.split(".")[-1]
     
-    # display document
+    # Display Document
     with st.expander("Display document"):
         displayPDF(path)
 
