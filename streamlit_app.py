@@ -1,5 +1,6 @@
 import streamlit as st
 from functions import displayPDF, images_to_txt
+from model_predict import predict
 
 st.title("🔥 My new app")
 
@@ -45,9 +46,14 @@ if pdf_file:
     totalPages = "Pages: "+str(nbPages)+" in total"
     text_data_f = "\n\n".join(texts)
 
+    # Download text
     st.info(totalPages)
     st.download_button("Download txt file", text_data_f)
 
+    # Predict Label
+    label = "Predicted label is: " + predict(text_data_f)
+    st.info(label)
+    
     st.markdown('''
         <style>
         .btn{
