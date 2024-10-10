@@ -6,7 +6,7 @@ from transformers import TFDistilBertForSequenceClassification
 @st.cache_data
 def predict(text):
     if "model" not in st.session_state.keys():
-        save_directory = "/content"
+        save_directory = "./model"
         st.session_state["tokenizer"] = DistilBertTokenizer.from_pretrained(save_directory)
         st.session_state["model"] = TFDistilBertForSequenceClassification.from_pretrained(save_directory)
     
