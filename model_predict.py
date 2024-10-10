@@ -37,6 +37,6 @@ def predict(text):
     else:
         prediction_label = "ERROR! unkown class"
         
-    prediction_label
+    return prediction_label
 
 
