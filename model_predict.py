@@ -22,8 +22,9 @@ def predict(text):
     # Forward to model
     output = model(predict_input)
 
+    # TODO: CHANGE TO SOFTMAX LATER
     # Get prediction value
-    prediction_value = tf.softmax(output.logits, axis=1).numpy()[0]
+    prediction_value = tf.argmax(output.logits, axis=1).numpy()[0]
     
     # Classify int value to text
     prediction_label = "ERROR! unkown class" # set error default label
